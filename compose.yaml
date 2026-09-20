@@ -1,0 +1,34 @@
+# Сайт-визитка eakramar.ru.
+#
+# На обкатке (виртуалка): сертификат самоподписанный из scripts/gen-cert.sh,
+#   лежит в ./certs, монтируется в nginx.
+# На бою (VPS, путь А): сертификаты Let's Encrypt с хоста монтируются
+#   в /etc/nginx/certs — см. закомментированный блок.
+
+services:
+  web:
+    build: .
+    image: eakramar-site:latest
+    container_name: eakramar-web
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      # сертификаты. Обкатка — самоподписанные из ./certs.
+      - ./certs:/etc/nginx/certs:ro
+
+      # На VPS заменить строку выше на сертификаты Let's Encrypt с хоста:
+      # - /etc/letsencrypt/live/eakramar.ru:/etc/nginx/certs:ro
+      # (в этом каталоге fullchain.pem и privkey.pem — имена совпадают
+      #  с теми, что ждёт nginx/default.conf)
+
+      # webroot для ACME-challenge: общий каталог с хостовым certbot.
+      # certbot кладёт сюда проверочный файл, nginx его отдаёт
+      - ./certbot-webroot:/var/www/certbot:ro
+    deploy:
+      resources:
+        limits:
+          memory: 128M
+
+# Тома не нужны — статика в образе, сертификаты и challenge через bind mount.

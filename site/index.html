@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Крамар Евгений — инженер ИТ-инфраструктуры</title>
+<meta name="description" content="Инженер ИТ-инфраструктуры: сети MikroTik и Cisco, Linux, Windows Server, виртуализация, мониторинг, информационная безопасность. Опыт 10+ лет, распределённые площадки и спутниковые каналы.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://eakramar.ru/">
+
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Крамар Евгений — инженер ИТ-инфраструктуры">
+<meta property="og:description" content="Сети, Linux, виртуализация, мониторинг, безопасность. 10+ лет практики на распределённой инфраструктуре.">
+<meta property="og:url" content="https://eakramar.ru/">
+<meta property="og:locale" content="ru_RU">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="/css/main.css">
+<script src="/js/main.js" defer></script>
+</head>
+<body>
+
+<!-- ══════════════ ШАПКА ══════════════ -->
+<header class="hero">
+  <div class="wrap">
+    <h1 class="hero__name">Крамар Евгений Александрович</h1>
+
+    <p class="hero__role">Инженер ИТ-инфраструктуры: сети, серверы, виртуализация, безопасность</p>
+
+    <p class="hero__lede">
+      Десять лет держу в работе распределённую инфраструктуру — от площадок на спутниковых
+      каналах до корпоративных сервисов в офисе. Отвечаю за то, чтобы связь была там, где её
+      трудно обеспечить, и за то, чтобы поломка нашлась целиком, а не до первого перезапуска.
+    </p>
+
+    <ul class="facts">
+      <li><b>10+ лет</b><span>сети и системное администрирование</span></li>
+      <li><b>Нефтегазовая отрасль</b><span>добыча и переработка, с 2022 года</span></li>
+      <li><b>Минусинск</b><span>готов к переезду и командировкам</span></li>
+      <li><b>Вахта 30/30</b><span>удалёнка, гибрид, офис или вахта</span></li>
+    </ul>
+
+    <!-- ЗАПОЛНИТЬ: подставь свои ссылки вместо # и вместо адреса почты -->
+    <div class="actions">
+      <a class="btn btn--primary" href="/rezume-kramar.pdf">Скачать резюме, PDF</a>
+      <a class="btn" href="https://github.com/kramarTeacher" rel="me noopener">GitHub</a>
+      <a class="btn" href="mailto:pochta@example.ru">Написать письмо</a>
+    </div>
+  </div>
+</header>
+
+<!-- ══════════════ ЧЕМ ЗАНИМАЮСЬ ══════════════ -->
+<section class="band band--tint">
+  <div class="wrap">
+    <h2 class="head">Чем занимаюсь</h2>
+    <div class="prose">
+      <p>
+        Главный специалист отдела информационных технологий в компании, которая добывает и
+        перерабатывает нефть. Инфраструктура распределённая: несколько площадок, часть из них
+        живёт на спутниковых каналах, где важен каждый килобит и каждая миллисекунда задержки.
+      </p>
+      <p>
+        Веду её целиком — маршрутизацию и каналы связи, коммутаторы и Wi-Fi, серверы Windows и
+        Linux, виртуализацию, телефонию, мониторинг и защиту рабочих станций. Отдельная зона
+        ответственности — закупки: технические требования, торги, договоры, приёмка.
+      </p>
+      <p>
+        Работаю на стороне эксплуатации, поэтому привык, что за ошибку отвечаю лично и ночью
+        поднимают тоже меня. Это дисциплинирует сильнее любого регламента.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ СХЕМА ══════════════ -->
+<section class="band">
+  <div class="wrap">
+    <h2 class="head">Что держу в работе</h2>
+
+    <figure class="diagram" id="diagram">
+      <svg viewBox="0 0 760 300" role="img" aria-labelledby="dg-title">
+        <title id="dg-title">Схема: удалённые площадки соединены каналами связи с ядром сети, которое обслуживает корпоративные сервисы</title>
+
+        <!-- связи слева -->
+        <path class="link" d="M200 70 C255 70 260 96 310 96"/>
+        <path class="link" d="M200 150 C255 150 260 150 310 150"/>
+        <path class="link" d="M200 230 C255 230 260 204 310 204"/>
+
+        <!-- связи справа -->
+        <path class="link link--r" d="M470 96 C525 96 535 52 590 52"/>
+        <path class="link link--r" d="M470 128 C525 128 535 120 590 120"/>
+        <path class="link link--r" d="M470 172 C525 172 535 190 590 190"/>
+        <path class="link link--r" d="M470 204 C525 204 535 258 590 258"/>
+
+        <!-- площадки -->
+        <g>
+          <rect class="node" x="20" y="48" width="180" height="44"/>
+          <text class="nlabel" x="36" y="68">Площадка добычи</text>
+          <text class="nsub" x="36" y="84">спутниковый канал</text>
+        </g>
+        <g>
+          <rect class="node" x="20" y="128" width="180" height="44"/>
+          <text class="nlabel" x="36" y="148">Переработка</text>
+          <text class="nsub" x="36" y="164">резервирование каналов</text>
+        </g>
+        <g>
+          <rect class="node" x="20" y="208" width="180" height="44"/>
+          <text class="nlabel" x="36" y="228">Офис</text>
+          <text class="nsub" x="36" y="244">проводная сеть и Wi-Fi</text>
+        </g>
+
+        <!-- ядро -->
+        <g>
+          <rect class="node node--core" x="310" y="60" width="160" height="180"/>
+          <text class="nlabel" x="330" y="94">Ядро сети</text>
+          <text class="nsub" x="330" y="118">маршрутизация</text>
+          <text class="nsub" x="330" y="136">VPN между площадками</text>
+          <text class="nsub" x="330" y="154">приоритизация трафика</text>
+          <text class="nsub" x="330" y="172">DNS-фильтрация</text>
+          <text class="nsub" x="330" y="190">межсетевой экран</text>
+          <text class="nsub" x="330" y="214">MikroTik, Cisco</text>
+        </g>
+
+        <!-- сервисы -->
+        <g>
+          <rect class="node" x="590" y="34" width="150" height="36"/>
+          <text class="nlabel" x="606" y="57">Active Directory</text>
+        </g>
+        <g>
+          <rect class="node" x="590" y="102" width="150" height="36"/>
+          <text class="nlabel" x="606" y="125">Виртуализация</text>
+        </g>
+        <g>
+          <rect class="node" x="590" y="172" width="150" height="36"/>
+          <text class="nlabel" x="606" y="195">IP-телефония</text>
+        </g>
+        <g>
+          <rect class="node" x="590" y="240" width="150" height="36"/>
+          <text class="nlabel" x="606" y="263">Мониторинг</text>
+        </g>
+      </svg>
+
+      <ul class="chain" aria-hidden="true">
+        <li><b>Площадки</b><span>добыча, переработка, офис — часть на спутниковых каналах</span></li>
+        <li><b>Ядро сети</b><span>маршрутизация, VPN, приоритизация трафика, DNS-фильтрация, межсетевой экран</span></li>
+        <li><b>Сервисы</b><span>Active Directory, виртуализация, IP-телефония, мониторинг</span></li>
+      </ul>
+
+      <figcaption>
+        Спутниковый канал не прощает небрежности: узкая полоса, высокая задержка, и любой
+        лишний трафик сразу слышно в телефонном разговоре. Поэтому приоритизация,
+        резервирование и мониторинг здесь не пункты регламента, а условие работы площадки.
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ══════════════ КЕЙСЫ ══════════════ -->
+<section class="band band--tint">
+  <div class="wrap">
+    <h2 class="head">Что оказалось на самом деле</h2>
+    <div class="prose" style="margin-bottom:2.25rem">
+      <p>
+        Четыре случая, где очевидная версия была неверной. Перезагрузка в каждом помогала —
+        на день или на неделю. Ниже то, что нашлось, когда докопался до конца.
+      </p>
+    </div>
+
+    <div class="cases">
+      <article class="case">
+        <h3 class="case__symptom">На серверах уезжало время. Синхронизация настроена, источник доступен, но расхождение возвращалось.</h3>
+        <p class="case__cause">Время переписывал агент системы контроля персонала, установленный на тех же машинах. Служба синхронизации работала штатно — её результат просто затирали следом. Нашлось сопоставлением момента расхождения с журналом запусков стороннего сервиса.</p>
+      </article>
+
+      <article class="case">
+        <h3 class="case__symptom">Голос рвался на спутниковом канале, хотя приоритизация трафика была настроена и правила отрабатывали.</h3>
+        <p class="case__cause">Метка <code>DSCP</code> проставлялась во внутреннем пакете, но при инкапсуляции в туннель не переносилась во внешний заголовок. Для оборудования на канале весь трафик выглядел одинаково. Лечится копированием метки при инкапсуляции.</p>
+      </article>
+
+      <article class="case">
+        <h3 class="case__symptom">Фильтрация нежелательных доменов перестала работать. Конфигурация на месте, служба запущена, ошибок в журнале нет.</h3>
+        <p class="case__cause">Зона <code>RPZ</code> оказалась закомментирована в конфигурации после давней правки. Служба стартовала без единой жалобы, потому что формально конфигурация была корректной — просто фильтрации в ней больше не было.</p>
+      </article>
+
+      <article class="case">
+        <h3 class="case__symptom">Клиенты периодически отваливались от Wi-Fi по всему объекту. Сигнал уверенный, каналы разведены, помех нет.</h3>
+        <p class="case__cause">У четырёх точек доступа совпали значения идентификатора. Контроллер путал их между собой и переключал клиентов туда-обратно. Симптом выглядел как радиопроблема, а причина была в конфигурации.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ СТЕК ══════════════ -->
+<section class="band">
+  <div class="wrap">
+    <h2 class="head">Технологии</h2>
+
+    <div class="stack">
+      <div>
+        <h3>Сети</h3>
+        <ul>
+          <li>MikroTik RouterOS 6 и 7</li>
+          <li>Cisco Catalyst 2960, 3650</li>
+          <li>VLAN, маршрутизация, VPN</li>
+          <li>Балансировка и резерв каналов</li>
+          <li>CAPsMAN, Wi-Fi</li>
+          <li>VSAT, спутниковые каналы</li>
+          <li>QoS и приоритизация трафика</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Серверы и виртуализация</h3>
+        <ul>
+          <li>Windows Server, Active Directory</li>
+          <li>Hyper-V, реплика и восстановление</li>
+          <li>Ubuntu Server, Debian</li>
+          <li>LXC</li>
+          <li>Exchange, файловые службы</li>
+          <li>FreePBX, Asterisk</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Linux и веб</h3>
+        <ul>
+          <li>nginx, reverse proxy</li>
+          <li>HTTPS, TLS, Let's Encrypt</li>
+          <li>BIND9, DNS и RPZ</li>
+          <li>systemd, журналы, таймеры</li>
+          <li>Bash, автоматизация</li>
+          <li>PostgreSQL в эксплуатации</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Мониторинг</h3>
+        <ul>
+          <li>Prometheus, Grafana</li>
+          <li>Loki, централизованные логи</li>
+          <li>Zabbix, SNMP, IPMI</li>
+          <li>Оповещения и автореакция</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Безопасность</h3>
+        <ul>
+          <li>nftables, iptables, UFW</li>
+          <li>Настройка защищённой конфигурации серверов</li>
+          <li>Kaspersky Security Center</li>
+          <li>Сертификаты и электронная подпись</li>
+          <li>Разбор инцидентов</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Диагностика</h3>
+        <ul>
+          <li>tcpdump, Wireshark</li>
+          <li>dig, traceroute, mtr, ss</li>
+          <li>Разбор трафика и дампов</li>
+          <li>Git</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="learning">
+      <h3>Сейчас осваиваю</h3>
+      <p>
+        Docker, CI/CD, Ansible, Python. Пишу об этом прямо: пока это учебная практика и
+        собственные проекты, а не промышленная эксплуатация. Материалы и артефакты выкладываю
+        на <a href="https://github.com/kramarTeacher" rel="noopener">GitHub</a>.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ ПОМИМО ИНЖЕНЕРИИ ══════════════ -->
+<section class="band band--tint">
+  <div class="wrap">
+    <h2 class="head">Помимо инженерии</h2>
+    <div class="prose">
+      <p>
+        <strong>Закупки и договоры.</strong> За 2024–2025 годы закрыл около двадцати договоров в
+        области ИТ — оборудование, программное обеспечение, лицензии, услуги связи, сервисное
+        обслуживание. Полный цикл: технические требования и обоснование, документация и заявка,
+        торги на электронных площадках, заключение, контроль подрядчика, приёмка.
+      </p>
+      <p>
+        <strong>Преподавание.</strong> Восемь лет вёл информатику и кружки по
+        веб-программированию и робототехнике в школах и колледже, параллельно обслуживал их
+        инфраструктуру. Умение объяснить сложное простыми словами осталось — оно пригождается,
+        когда нужно защитить решение перед руководством или передать систему коллеге.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ КОНТАКТЫ ══════════════ -->
+<section class="band" id="contacts">
+  <div class="wrap">
+    <h2 class="head">Связаться</h2>
+
+    <!-- ЗАПОЛНИТЬ: почта, телефон, телеграм, ссылка на hh.ru -->
+    <dl class="contacts">
+      <div>
+        <dt>Почта</dt>
+        <dd><a href="mailto:pochta@example.ru" id="mail">pochta@example.ru</a></dd>
+        <button class="copy" type="button" data-copy="#mail">скопировать</button>
+      </div>
+      <div>
+        <dt>Телефон</dt>
+        <dd><a href="tel:+70000000000">+7 000 000-00-00</a></dd>
+      </div>
+      <div>
+        <dt>Телеграм</dt>
+        <dd><a href="https://t.me/username" rel="noopener">@username</a></dd>
+      </div>
+      <div>
+        <dt>Код и проекты</dt>
+        <dd><a href="https://github.com/kramarTeacher" rel="me noopener">github.com/kramarTeacher</a></dd>
+      </div>
+    </dl>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    Крамар Евгений Александрович, <span id="year">2026</span>.
+    Страница собрана вручную и работает на nginx с TLS на собственном сервере.
+  </div>
+</footer>
+
+</body>
+</html>

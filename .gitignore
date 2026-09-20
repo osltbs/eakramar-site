@@ -1,0 +1,7 @@
+# Сертификаты — не в Git
+certs/
+certbot-webroot/
+
+# Системное
+.DS_Store
+Thumbs.db
