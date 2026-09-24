@@ -1,17 +1,16 @@
 stages:
   - build
 
-variables:
-  IMAGE: $CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA
-
 build:
   stage: build
   image: docker:latest
   services:
     - docker:dind
+  variables:
+    IMAGE: $CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA
   before_script:
-    - docker info
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
   script:
-    - echo "Sobirayu obraz"
     - docker build -t $IMAGE .
+    - docker push $IMAGE
     - docker images
