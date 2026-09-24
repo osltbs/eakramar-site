@@ -1,11 +1,7 @@
-# Пайплайн сборки образа сайта.
-# Использует Docker-in-Docker: раннер поднимает docker, внутри собирает образ.
-
 stages:
   - build
 
 variables:
-  # имя образа с адресом реестра GitLab
   IMAGE: $CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA
 
 build:
@@ -16,7 +12,6 @@ build:
   before_script:
     - docker info
   script:
-    - echo "Собираю образ сайта"
+    - echo "Sobirayu obraz"
     - docker build -t $IMAGE .
-    - echo "Образ собран: $IMAGE"
-    - docker images | grep eakramar
+    - docker images
