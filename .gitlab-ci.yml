@@ -22,8 +22,10 @@ build:
 
 scan:
   stage: scan
-  image: docker:latest
-  services:
-    - docker:dind
+  image:
+    name: aquasec/trivy:latest
+    entrypoint: [""]
   script:
-    - docker run --rm -v $(pwd):/work aquasec/trivy image --input /work/image.tar --severity HIGH,CRITICAL --exit-code 0
+   - trivy image --input image.tar --severity HIGH,CRITICAL --exit-code 0
+  dependencies:
+    - build
