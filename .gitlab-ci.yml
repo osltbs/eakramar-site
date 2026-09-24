@@ -1,0 +1,10 @@
+stages:
+  - test
+
+hello:
+  stage: test
+  image: alpine:latest
+  script:
+    - echo "Пайплайн работает!"
+    - echo "Раннер выполнил задачу в контейнере alpine"
+    - uname -a
