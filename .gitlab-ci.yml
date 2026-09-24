@@ -13,18 +13,17 @@ build:
     - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
   script:
     - docker build --provenance=false -t $IMAGE .
+    - docker save $IMAGE -o image.tar
     - docker push $IMAGE
+  artifacts:
+    paths:
+      - image.tar
+    expire_in: 1 hour
 
 scan:
   stage: scan
   image: docker:latest
   services:
     - docker:dind
-  variables:
-    IMAGE: $CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA
   script:
-    - docker run --rm
-        -e TRIVY_USERNAME=$CI_REGISTRY_USER
-        -e TRIVY_PASSWORD=$CI_REGISTRY_PASSWORD
-        -e TRIVY_INSECURE=true
-        aquasec/trivy image --severity HIGH,CRITICAL --exit-code 0 $IMAGE
+    - docker run --rm -v $(pwd):/work aquasec/trivy image --input /work/image.tar --severity HIGH,CRITICAL --exit-code 0
