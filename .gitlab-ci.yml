@@ -1,10 +1,22 @@
-stages:
-  - test
+# Пайплайн сборки образа сайта.
+# Использует Docker-in-Docker: раннер поднимает docker, внутри собирает образ.
 
-hello:
-  stage: test
-  image: alpine:latest
+stages:
+  - build
+
+variables:
+  # имя образа с адресом реестра GitLab
+  IMAGE: $CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA
+
+build:
+  stage: build
+  image: docker:latest
+  services:
+    - docker:dind
+  before_script:
+    - docker info
   script:
-    - echo "Пайплайн работает!"
-    - echo "Раннер выполнил задачу в контейнере alpine"
-    - uname -a
+    - echo "Собираю образ сайта"
+    - docker build -t $IMAGE .
+    - echo "Образ собран: $IMAGE"
+    - docker images | grep eakramar
