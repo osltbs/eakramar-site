@@ -1,3 +1,8 @@
+# CI/CD пайплайн сайта-визитки: сборка → скан → деплой на VPS
+# build  — собрать образ, сохранить в реестр и артефакт
+# scan   — trivy по образу
+# deploy — rsync код на VPS + пересборка там
+
 stages:
   - build
   - scan
@@ -36,14 +41,12 @@ deploy:
   image: alpine:latest
   before_script:
     - apk add --no-cache openssh-client rsync
-    - chmod 600 "$SSH_PRIVATE_KEY"
     - mkdir -p ~/.ssh
+    - echo "$SSH_PRIVATE_KEY_B64" | base64 -d > ~/.ssh/deploy_key
+    - chmod 600 ~/.ssh/deploy_key
     - ssh-keyscan 94.183.155.135 >> ~/.ssh/known_hosts 2>/dev/null
   script:
-    - rsync -az --delete --exclude '.git' --exclude 'certs' --exclude 'certbot-webroot'
-        -e "ssh -i $SSH_PRIVATE_KEY"
-        ./ eakramar@94.183.155.135:/opt/eakramar-site/
-    - ssh -i "$SSH_PRIVATE_KEY" eakramar@94.183.155.135
-        "cd /opt/eakramar-site && docker compose up -d --build"
+    - rsync -az --delete --exclude '.git' --exclude 'certs' --exclude 'certbot-webroot' -e "ssh -i ~/.ssh/deploy_key" ./ eakramar@94.183.155.135:/opt/eakramar-site/
+    - ssh -i ~/.ssh/deploy_key eakramar@94.183.155.135 "cd /opt/eakramar-site && docker compose up -d --build"
   only:
     - ci-cd
