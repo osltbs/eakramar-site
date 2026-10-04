@@ -1,0 +1,15 @@
+services:
+  web:
+    image: ${REGISTRY_HOST}/root/eakramar-site:${TAG:-latest}
+    container_name: eakramar-web
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - /etc/letsencrypt:/etc/letsencrypt:ro
+      - /var/www/certbot:/var/www/certbot:ro
+    deploy:
+      resources:
+        limits:
+          memory: 128M
